@@ -59,7 +59,33 @@
     </div>
 
     <div id="projects">
-      <h2>Project Name 1</h2>
+      <h2 class="ProjectTitle">Project Name 1</h2>
+      <div class="container">
+        <div class="imgBox">
+          <img src="./assets/sample.png"/>
+        </div>
+        <div class="content">
+          <p>Pct 1 description
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="projects">
+      <h2 class="ProjectTitle">Project Name 1</h2>
+      <div class="container">
+        <div class="imgBox">
+          <img src="./assets/sample.png"/>
+        </div>
+        <div class="content">
+          <p>Pct 1 description
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="projects">
+      <h2 class="ProjectTitle">Project Name 1</h2>
       <div class="container">
         <div class="imgBox">
           <img src="./assets/sample.png"/>
@@ -94,6 +120,23 @@
         var projects = document.getElementById("projects");
         projects.style.top = pageHeight;
       }
+      ;(function(){
+        window.addEventListener("scroll", getCurrentHeight);
+        function getCurrentHeight(){
+        var currentHeight = window.scrollY;
+        var screenHeight = window.innerHeight;
+        var screenWidth = window.innerWidth;
+        var ProjectTitles = document.querySelectorAll(".ProjectTitle");
+        if(currentHeight >= screenHeight*2){
+          console.log("true");
+          var move = (currentHeight - (currentHeight%screenHeight)*screenHeight)*0.002;
+          console.log(move,screenWidth);
+          ProjectTitles.forEach((ProjectTitle)=>{
+            ProjectTitle.style.right = move + "px";
+          })
+        }
+        }
+      })()
     </script>
   </body>
 </html>
