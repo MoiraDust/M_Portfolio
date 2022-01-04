@@ -9,6 +9,12 @@
       rel="stylesheet"
       href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <title>Moira's Portfolio</title>
   </head>
   <body>
@@ -64,14 +70,96 @@
       </a>
     </div>
 
+    <!-- card -->
     <div class="projects" id="projects">
-      <h2 class="title">Portfolio</h2>
-      <div class="container">
-        <div class="card">1</div>
-        <div class="card">2</div>
-        <div class="card">3</div>
-        <div class="card">4</div>
-        <div class="card">5</div>
+      <h2 class="title" id="title">Portfolio</h2>
+      <div class="slider owl-carousel">
+        <!-- Screen System -->
+        <div class="card">
+          <div class="img">
+            <img src="./assets/sample/sample1.png" alt="" />
+          </div>
+          <div class="content">
+            <div class="projectTitle">1 Screen System</div>
+            <div class="projectType">Full Stack</div>
+            <p>Screen System Introduction</p>
+            <div class="btn">
+              <button>Read More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img">
+            <img src="./assets/sample/sample1.png" alt="" />
+          </div>
+          <div class="content">
+            <div class="projectTitle">Screen System</div>
+            <div class="projectType">Full Stack</div>
+            <p>Screen System Introduction</p>
+            <div class="btn">
+              <button>Read More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img">
+            <img src="./assets/sample/sample1.png" alt="" />
+          </div>
+          <div class="content">
+            <div class="projectTitle">Screen System</div>
+            <div class="projectType">Full Stack</div>
+            <p>Screen System Introduction</p>
+            <div class="btn">
+              <button>Read More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img">
+            <img src="./assets/sample/sample1.png" alt="" />
+          </div>
+          <div class="content">
+            <div class="projectTitle">Screen System</div>
+            <div class="projectType">Full Stack</div>
+            <p>Screen System Introduction</p>
+            <div class="btn">
+              <button>Read More</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="img">
+            <img src="./assets/sample/sample1.png" alt="" />
+          </div>
+          <div class="content">
+            <div class="projectTitle">Screen System</div>
+            <div class="projectType">Full Stack</div>
+            <p>Screen System Introduction</p>
+            <div class="btn">
+              <button>Read More</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- popup -->
+      <div id="popup1">
+        <ul class="img owl-carousel">
+          <li><img src="./assets/sample/sample2.png" /></li>
+          <li><img src="./assets/sample/sample1.png" /></li>
+          <li><img src="./assets/sample/sample3.png" /></li>
+        </ul>
+        <p>
+          Screen System<br />
+          Screen System Screen System Screen System Screen System Screen System
+          Screen System Screen System Screen System Screen System Screen System
+        </p>
+        <div class="btn">
+          <button>Close</button>
+        </div>
       </div>
     </div>
 
@@ -101,7 +189,7 @@
     </div>
 
     <script>
-      // header effective
+      // header move effective
       (function () {
         let star = document.getElementById("star");
         let rem = document.getElementById("rem");
@@ -120,14 +208,13 @@
 
         window.addEventListener("scroll", scrollActive);
       })();
-
       // introduction arrow
       function scrollPage() {
         var pageHeight = window.innerHeight;
         var projects = document.getElementById("projects");
         projects.style.top = pageHeight;
       }
-      // projects effective
+      // projects move effective
       (function () {
         window.addEventListener("scroll", getCurrentHeight);
         function getCurrentHeight() {
@@ -135,15 +222,41 @@
           var screenHeight = window.innerHeight;
           var screenWidth = window.innerWidth;
           var title = document.querySelector(".title");
-          var container = document.querySelector(".container");
+          var slider = document.querySelector(".slider");
           var move =
             (currentHeight - (currentHeight % screenHeight) * screenHeight) *
             0.002;
           if (currentHeight >= screenHeight * 2) {
-            title.style.bottom = move + "px";
-            container.style.bottom = move + "px";
+            title.style.right = move + "px";
+            slider.style.left = move + "px";
           }
         }
+      })();
+      // card carousel
+      (function () {
+        $(".slider").owlCarousel({
+          loop: true,
+          autoplay: true,
+          autoplayTime: 2000,
+          autoplayHoverPause: true,
+        });
+      })();
+      // popup
+      // picture carousel
+      (function () {
+        $("#popup1 .owl-carousel").owlCarousel({
+          center: true,
+          items: 1,
+          loop: true,
+          margin: 10,
+          autoplay: true,
+          autoplayTime: 2500,
+          responsive: {
+            600: {
+              items: 1,
+            },
+          },
+        });
       })();
     </script>
   </body>

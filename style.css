@@ -201,11 +201,18 @@ section img#sakura {
 .projects {
   position: relative;
   display: flex;
+  /* display: grid; */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   width: 100%;
   background-color: #999933;
+}
+.projects .title {
+  position: absolute;
+  padding: 10px;
+  top: 50px;
+  right: 0px;
 }
 .projects h2 {
   position: relative;
@@ -215,24 +222,124 @@ section img#sakura {
   margin-bottom: 40%;
   width: 20%;
 }
-.projects .container {
+.projects .slider {
   position: relative;
   width: 1000px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 }
-.projects .title {
+.projects .slider .card {
+  /* background: red; */
+  flex: 1;
+  margin: 0 10px;
+}
+.projects .slider .card .img {
+  height: 200px;
+  width: 100%;
+}
+.projects .slider .card .img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.projects .slider .card .content {
+  padding: 10px 20px;
+  background: rgb(51, 102, 153, 0.5);
+  /* background: #003366; */
+}
+.projects .slider .card .content .projectTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+.projects .slider .card .content .projectType {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  line-height: 20px;
+}
+.projects .slider .card .content p {
+  text-align: justify;
+  margin: 10px 0;
+}
+.projects .btn {
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+}
+.projects .btn button {
+  background: #333333;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.projects .btn button:hover {
+  transform: scale(0.9);
+}
+/* popup */
+#popup1,
+#popup2,
+#popup3,
+#popup4,
+#popup5 {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 800px;
+  overflow: hidden;
+  /* padding: 10px; */
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  background: white;
+  z-index: 1;
+}
+#popup1 p,
+#popup2 p,
+#popup3 p,
+#popup4 p,
+#popup5 p {
   padding: 10px;
-  top: 50px;
-  right: 0px;
+  flex: 1;
+  font-size: 1em;
+  text-align: justify;
 }
-.projects .card {
-  background-color: black;
+#popup1 .img,
+#popup2 .img,
+#popup3 .img,
+#popup4 .img,
+#popup5 .img {
+  flex: 1;
+  margin-top: 10px;
+}
+
+#popup1 .img img,
+#popup2 .img img,
+#popup3 .img img,
+#popup4 .img img,
+#popup5 .img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+#popup1 button,
+#popup2 button,
+#popup3 button,
+#popup4 button,
+#popup5 button {
   position: absolute;
-  top: 0;
+  left: 10px;
+  bottom: 10px;
 }
+
 .projects::after {
   content: "";
   position: absolute;
