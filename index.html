@@ -16,7 +16,7 @@
       <a href="#" class="logo">Moira</a>
       <ul>
         <!-- 默认选择为Home -->
-        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Home</a></li>
         <li><a href="#introduction">About</a></li>
         <li><a href="#projects">My Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -64,91 +64,14 @@
       </a>
     </div>
 
-    <div class="projects project1" id="projects">
-      <h2 class="ProjectTitle title1">My portfolio</h2>
-      <div class="container container1">
-        <!-- picture 轮播 -->
-        <div class="imgBox">
-          <ul class="images">
-            <li class="img p1"></li>
-            <li class="img p1"></li>
-            <li class="img p1"></li>
-            <li class="img p1"></li>
-            <li class="img p1"></li>
-          </ul>
-
-          <!-- <ul class="min-images">
-            <li class="min"></li>
-            <li class="min"></li>
-            <li class="min"></li>
-          </ul> -->
-
-          <div class="button">
-            <div class="button-left"><</div>
-            <div class="button-right">></div>
-          </div>
-          <!-- <img src="./assets/sample.png" /> -->
-        </div>
-      </div>
-    </div>
-
-    <div class="projects project1">
-      <h2 class="ProjectTitle">Screen system</h2>
-      <div class="container container1">
-        <div class="imgBox">
-          <img src="./assets/sample.png" />
-        </div>
-        <div class="content">
-          <p>Pct 1 description</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="projects project2">
-      <h2 class="ProjectTitle title2">Smart Education</h2>
-      <div class="container container2">
-        <div class="imgBox">
-          <img src="./assets/sample.png" />
-        </div>
-        <div class="content">
-          <p>Pct 1 description</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="projects project3">
-      <h2 class="ProjectTitle title3">Simple Shopping Site</h2>
-      <div class="container container3">
-        <div class="imgBox">
-          <img src="./assets/sample.png" />
-        </div>
-        <div class="content">
-          <p>Pct 1 description</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="projects project4">
-      <h2 class="ProjectTitle title4">My Introduction Site</h2>
-      <div class="container container4">
-        <div class="imgBox">
-          <img src="./assets/sample.png" />
-        </div>
-        <div class="content">
-          <p>Pct 1 description</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="projects project5">
-      <h2 class="ProjectTitle title5">javascript Applets</h2>
-      <div class="container container5">
-        <div class="imgBox">
-          <img src="./assets/sample.png" />
-        </div>
-        <div class="content">
-          <p>Pct 1 description</p>
-        </div>
+    <div class="projects" id="projects">
+      <h2 class="title">Portfolio</h2>
+      <div class="container">
+        <div class="card">1</div>
+        <div class="card">2</div>
+        <div class="card">3</div>
+        <div class="card">4</div>
+        <div class="card">5</div>
       </div>
     </div>
 
@@ -211,105 +134,16 @@
           var currentHeight = window.scrollY;
           var screenHeight = window.innerHeight;
           var screenWidth = window.innerWidth;
-
-          var title1 = document.querySelector(".title1");
-          var title2 = document.querySelector(".title2");
-          var title3 = document.querySelector(".title3");
-          var title4 = document.querySelector(".title4");
-          var title5 = document.querySelector(".title5");
-
-          var container1 = document.querySelector(".container1");
-          var container2 = document.querySelector(".container2");
-          var container3 = document.querySelector(".container3");
-          var container4 = document.querySelector(".container4");
-          var container5 = document.querySelector(".container5");
-
+          var title = document.querySelector(".title");
+          var container = document.querySelector(".container");
           var move =
             (currentHeight - (currentHeight % screenHeight) * screenHeight) *
             0.002;
-
           if (currentHeight >= screenHeight * 2) {
-            title1.style.bottom = move + "px";
-            container1.style.bottom = move + "px";
-          }
-
-          if (currentHeight >= screenHeight * 3) {
-            title2.style.bottom = -move + "px";
-            container2.style.bottom = move + "px";
-          }
-
-          if (currentHeight >= screenHeight * 4) {
-            title3.style.bottom = move + "px";
-            container3.style.bottom = move + "px";
-          }
-
-          if (currentHeight >= screenHeight * 5) {
-            title4.style.bottom = -move + "px";
-            container4.style.bottom = move + "px";
-          }
-
-          if (currentHeight >= screenHeight * 6) {
-            title5.style.bottom = move + "px";
-            container5.style.bottom = move + "px";
+            title.style.bottom = move + "px";
+            container.style.bottom = move + "px";
           }
         }
-      })();
-      // picture Carousel
-      (function () {
-        // project 1
-        let left = document.querySelector(".button-left");
-        let right = document.querySelector(".button-right");
-        let min = document.querySelectorAll(".img");
-        let images = document.querySelector(".images");
-        let content = document.querySelector(".content");
-        let intro = document.querySelector(".intro");
-
-        let index = 0;
-        let time;
-        // how much distance should the picture be moved
-        function position() {
-          images.style.left = index * -100 + "%";
-          content.style.left = index * -100 + "%";
-        }
-        // calculate the index, to identify the Serial number of the current picture
-        function add() {
-          if (index >= min.length - 1) {
-            // 清零
-            index = 0;
-          } else {
-            index++;
-          }
-        }
-        function desc() {
-          if (index < 1) {
-            index = min.length - 1;
-          } else {
-            index--;
-          }
-        }
-        function timer() {
-          time = setInterval(() => {
-            index++;
-            desc();
-            add();
-            position();
-          }, 3000);
-        }
-        left.addEventListener("click", () => {
-          console.log("left clicked");
-          desc();
-          position();
-          clearInterval(time);
-          timer();
-        });
-        right.addEventListener("click", () => {
-          console.log("right clicked");
-          add();
-          position();
-          clearInterval(time);
-          timer();
-        });
-        timer();
       })();
     </script>
   </body>
