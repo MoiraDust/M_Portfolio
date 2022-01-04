@@ -72,75 +72,77 @@
 
     <!-- card -->
     <div class="projects" id="projects">
-      <h2 class="title" id="title">Portfolio</h2>
-      <div class="slider owl-carousel">
-        <!-- Screen System -->
-        <div class="card">
-          <div class="img">
-            <img src="./assets/sample/sample1.png" alt="" />
-          </div>
-          <div class="content">
-            <div class="projectTitle">1 Screen System</div>
-            <div class="projectType">Full Stack</div>
-            <p>Screen System Introduction</p>
-            <div class="btn">
-              <button>Read More</button>
+      <div id="blur">
+        <h2 class="title" id="title">Portfolio</h2>
+        <div class="slider owl-carousel">
+          <!-- Screen System -->
+          <div class="card">
+            <div class="img">
+              <img src="./assets/sample/sample1.png" alt="" />
+            </div>
+            <div class="content">
+              <div class="projectTitle">1 Screen System</div>
+              <div class="projectType">Full Stack</div>
+              <p>Screen System Introduction</p>
+              <div class="btn">
+                <button onclick="toggle()">Read More</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="img">
-            <img src="./assets/sample/sample1.png" alt="" />
-          </div>
-          <div class="content">
-            <div class="projectTitle">Screen System</div>
-            <div class="projectType">Full Stack</div>
-            <p>Screen System Introduction</p>
-            <div class="btn">
-              <button>Read More</button>
+          <div class="card">
+            <div class="img">
+              <img src="./assets/sample/sample1.png" alt="" />
+            </div>
+            <div class="content">
+              <div class="projectTitle">Screen System</div>
+              <div class="projectType">Full Stack</div>
+              <p>Screen System Introduction</p>
+              <div class="btn">
+                <button>Read More</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="img">
-            <img src="./assets/sample/sample1.png" alt="" />
-          </div>
-          <div class="content">
-            <div class="projectTitle">Screen System</div>
-            <div class="projectType">Full Stack</div>
-            <p>Screen System Introduction</p>
-            <div class="btn">
-              <button>Read More</button>
+          <div class="card">
+            <div class="img">
+              <img src="./assets/sample/sample1.png" alt="" />
+            </div>
+            <div class="content">
+              <div class="projectTitle">Screen System</div>
+              <div class="projectType">Full Stack</div>
+              <p>Screen System Introduction</p>
+              <div class="btn">
+                <button>Read More</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="img">
-            <img src="./assets/sample/sample1.png" alt="" />
-          </div>
-          <div class="content">
-            <div class="projectTitle">Screen System</div>
-            <div class="projectType">Full Stack</div>
-            <p>Screen System Introduction</p>
-            <div class="btn">
-              <button>Read More</button>
+          <div class="card">
+            <div class="img">
+              <img src="./assets/sample/sample1.png" alt="" />
+            </div>
+            <div class="content">
+              <div class="projectTitle">Screen System</div>
+              <div class="projectType">Full Stack</div>
+              <p>Screen System Introduction</p>
+              <div class="btn">
+                <button>Read More</button>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="card">
-          <div class="img">
-            <img src="./assets/sample/sample1.png" alt="" />
-          </div>
-          <div class="content">
-            <div class="projectTitle">Screen System</div>
-            <div class="projectType">Full Stack</div>
-            <p>Screen System Introduction</p>
-            <div class="btn">
-              <button>Read More</button>
+          <div class="card">
+            <div class="img">
+              <img src="./assets/sample/sample1.png" alt="" />
+            </div>
+            <div class="content">
+              <div class="projectTitle">Screen System</div>
+              <div class="projectType">Full Stack</div>
+              <p>Screen System Introduction</p>
+              <div class="btn">
+                <button>Read More</button>
+              </div>
             </div>
           </div>
         </div>
@@ -158,7 +160,7 @@
           Screen System Screen System Screen System Screen System Screen System
         </p>
         <div class="btn">
-          <button>Close</button>
+          <button onclick="toggle()">Close</button>
         </div>
       </div>
     </div>
@@ -241,7 +243,13 @@
           autoplayHoverPause: true,
         });
       })();
-      // popup
+      // popup and blur
+      function toggle() {
+        var blur = document.getElementById("blur");
+        blur.classList.toggle("active");
+        var popup1 = document.getElementById("popup1");
+        popup1.classList.toggle("active");
+      }
       // picture carousel
       (function () {
         $("#popup1 .owl-carousel").owlCarousel({

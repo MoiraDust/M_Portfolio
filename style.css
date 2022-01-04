@@ -284,6 +284,12 @@ section img#sakura {
   transform: scale(0.9);
 }
 /* popup */
+#blur.active {
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+}
+
 #popup1,
 #popup2,
 #popup3,
@@ -300,6 +306,19 @@ section img#sakura {
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
   background: white;
   z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+#popup1.active,
+#popup2.active,
+#popup3.active,
+#popup4.active,
+#popup5.active {
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
 }
 #popup1 p,
 #popup2 p,
@@ -319,7 +338,6 @@ section img#sakura {
   flex: 1;
   margin-top: 10px;
 }
-
 #popup1 .img img,
 #popup2 .img img,
 #popup3 .img img,
@@ -329,7 +347,6 @@ section img#sakura {
   width: 100%;
   object-fit: cover;
 }
-
 #popup1 button,
 #popup2 button,
 #popup3 button,
