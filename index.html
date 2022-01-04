@@ -65,7 +65,35 @@
     </div>
 
     <div class="projects project1" id="projects">
-      <h2 class="ProjectTitle title1">Screening System</h2>
+      <h2 class="ProjectTitle title1">My portfolio</h2>
+      <div class="container container1">
+        <!-- picture 轮播 -->
+        <div class="imgBox">
+          <ul class="images">
+            <li class="img p1"></li>
+            <li class="img p1"></li>
+            <li class="img p1"></li>
+            <li class="img p1"></li>
+            <li class="img p1"></li>
+          </ul>
+
+          <!-- <ul class="min-images">
+            <li class="min"></li>
+            <li class="min"></li>
+            <li class="min"></li>
+          </ul> -->
+
+          <div class="button">
+            <div class="button-left"><</div>
+            <div class="button-right">></div>
+          </div>
+          <!-- <img src="./assets/sample.png" /> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="projects project1">
+      <h2 class="ProjectTitle">Screen system</h2>
       <div class="container container1">
         <div class="imgBox">
           <img src="./assets/sample.png" />
@@ -150,6 +178,7 @@
     </div>
 
     <script>
+      // header effective
       (function () {
         let star = document.getElementById("star");
         let rem = document.getElementById("rem");
@@ -169,11 +198,13 @@
         window.addEventListener("scroll", scrollActive);
       })();
 
+      // introduction arrow
       function scrollPage() {
         var pageHeight = window.innerHeight;
         var projects = document.getElementById("projects");
         projects.style.top = pageHeight;
       }
+      // projects effective
       (function () {
         window.addEventListener("scroll", getCurrentHeight);
         function getCurrentHeight() {
@@ -222,6 +253,63 @@
             container5.style.bottom = move + "px";
           }
         }
+      })();
+      // picture Carousel
+      (function () {
+        // project 1
+        let left = document.querySelector(".button-left");
+        let right = document.querySelector(".button-right");
+        let min = document.querySelectorAll(".img");
+        let images = document.querySelector(".images");
+        let content = document.querySelector(".content");
+        let intro = document.querySelector(".intro");
+
+        let index = 0;
+        let time;
+        // how much distance should the picture be moved
+        function position() {
+          images.style.left = index * -100 + "%";
+          content.style.left = index * -100 + "%";
+        }
+        // calculate the index, to identify the Serial number of the current picture
+        function add() {
+          if (index >= min.length - 1) {
+            // 清零
+            index = 0;
+          } else {
+            index++;
+          }
+        }
+        function desc() {
+          if (index < 1) {
+            index = min.length - 1;
+          } else {
+            index--;
+          }
+        }
+        function timer() {
+          time = setInterval(() => {
+            index++;
+            desc();
+            add();
+            position();
+          }, 3000);
+        }
+        left.addEventListener("click", () => {
+          console.log("left clicked");
+          desc();
+          position();
+          clearInterval(time);
+          timer();
+        });
+        right.addEventListener("click", () => {
+          console.log("right clicked");
+          add();
+          position();
+          clearInterval(time);
+          timer();
+        });
+        timer();
       })();
     </script>
   </body>
