@@ -81,7 +81,7 @@
               <img src="./assets/sample/sample1.png" alt="" />
             </div>
             <div class="content">
-              <div class="projectTitle">1 Screen System</div>
+              <div class="projectTitle">Screen System</div>
               <div class="projectType">Full Stack</div>
               <p>Screen System Introduction</p>
               <div class="btn">
@@ -95,7 +95,7 @@
               <img src="./assets/sample/sample1.png" alt="" />
             </div>
             <div class="content">
-              <div class="projectTitle">Screen System</div>
+              <div class="projectTitle">Smart Education</div>
               <div class="projectType">Full Stack</div>
               <p>Screen System Introduction</p>
               <div class="btn">
@@ -109,11 +109,11 @@
               <img src="./assets/sample/sample1.png" alt="" />
             </div>
             <div class="content">
-              <div class="projectTitle">Screen System</div>
+              <div class="projectTitle">Shopping Cart</div>
               <div class="projectType">Full Stack</div>
               <p>Screen System Introduction</p>
               <div class="btn">
-                <button>Read More</button>
+                <button onclick="toggle()">Read More</button>
               </div>
             </div>
           </div>
@@ -123,11 +123,11 @@
               <img src="./assets/sample/sample1.png" alt="" />
             </div>
             <div class="content">
-              <div class="projectTitle">Screen System</div>
+              <div class="projectTitle">My Resume</div>
               <div class="projectType">Full Stack</div>
               <p>Screen System Introduction</p>
               <div class="btn">
-                <button>Read More</button>
+                <button onclick="toggle()">Read More</button>
               </div>
             </div>
           </div>
@@ -137,18 +137,83 @@
               <img src="./assets/sample/sample1.png" alt="" />
             </div>
             <div class="content">
-              <div class="projectTitle">Screen System</div>
+              <div class="projectTitle">js Applets</div>
               <div class="projectType">Full Stack</div>
               <p>Screen System Introduction</p>
               <div class="btn">
-                <button>Read More</button>
+                <button onclick="toggle()">Read More</button>
               </div>
             </div>
           </div>
         </div>
       </div>
       <!-- popup -->
+      <!-- project 1 -->
       <div id="popup1">
+        <ul class="img owl-carousel">
+          <li><img src="./assets/sample/sample2.png" /></li>
+          <li><img src="./assets/sample/sample1.png" /></li>
+          <li><img src="./assets/sample/sample3.png" /></li>
+        </ul>
+        <p>
+          Screen System<br />
+          Screen System Screen System Screen System Screen System Screen System
+          Screen System Screen System Screen System Screen System Screen System
+        </p>
+        <div class="btn">
+          <button onclick="toggle()">Close</button>
+        </div>
+      </div>
+      <!-- project 2 -->
+      <div id="popup2">
+        <ul class="img owl-carousel">
+          <li><img src="./assets/sample/sample2.png" /></li>
+          <li><img src="./assets/sample/sample1.png" /></li>
+          <li><img src="./assets/sample/sample3.png" /></li>
+        </ul>
+        <p>
+          Screen System<br />
+          Screen System Screen System Screen System Screen System Screen System
+          Screen System Screen System Screen System Screen System Screen System
+        </p>
+        <div class="btn">
+          <button onclick="toggle()">Close</button>
+        </div>
+      </div>
+      <!-- project 3 -->
+      <div id="popup3">
+        <ul class="img owl-carousel">
+          <li><img src="./assets/sample/sample2.png" /></li>
+          <li><img src="./assets/sample/sample1.png" /></li>
+          <li><img src="./assets/sample/sample3.png" /></li>
+        </ul>
+        <p>
+          Screen System<br />
+          Screen System Screen System Screen System Screen System Screen System
+          Screen System Screen System Screen System Screen System Screen System
+        </p>
+        <div class="btn">
+          <button onclick="toggle()">Close</button>
+        </div>
+      </div>
+      <!-- project 4 -->
+      <div id="popup4">
+        <ul class="img owl-carousel">
+          <li><img src="./assets/sample/sample2.png" /></li>
+          <li><img src="./assets/sample/sample1.png" /></li>
+          <li><img src="./assets/sample/sample3.png" /></li>
+        </ul>
+        <p>
+          Screen System<br />
+          Screen System Screen System Screen System Screen System Screen System
+          Screen System Screen System Screen System Screen System Screen System
+        </p>
+        <div class="btn">
+          <button onclick="toggle()">Close</button>
+        </div>
+      </div>
+      <!-- project 5 -->
+      <div id="popup5">
         <ul class="img owl-carousel">
           <li><img src="./assets/sample/sample2.png" /></li>
           <li><img src="./assets/sample/sample1.png" /></li>
@@ -185,7 +250,10 @@
           ><br />
           <i class="fa fa-weixin" aria-hidden="true"></i>&nbsp;WeChat ID:
           Marchendust<br />
-          <i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;mobile:0478141899
+          <i class="fa fa-mobile" aria-hidden="true"></i
+          >&nbsp;mobile:0478141899<br /><br />
+          <hr />
+          <h2>Made by Moira Yang</h2>
         </p>
       </div>
     </div>
@@ -252,7 +320,64 @@
       }
       // picture carousel
       (function () {
+        // project 1
         $("#popup1 .owl-carousel").owlCarousel({
+          center: true,
+          items: 1,
+          loop: true,
+          margin: 10,
+          autoplay: true,
+          autoplayTime: 2500,
+          responsive: {
+            600: {
+              items: 1,
+            },
+          },
+        });
+        // project 2
+        $("#popup2 .owl-carousel").owlCarousel({
+          center: true,
+          items: 1,
+          loop: true,
+          margin: 10,
+          autoplay: true,
+          autoplayTime: 2500,
+          responsive: {
+            600: {
+              items: 1,
+            },
+          },
+        });
+        // project 3
+        $("#popup3 .owl-carousel").owlCarousel({
+          center: true,
+          items: 1,
+          loop: true,
+          margin: 10,
+          autoplay: true,
+          autoplayTime: 2500,
+          responsive: {
+            600: {
+              items: 1,
+            },
+          },
+        });
+        // project 4
+        $("#popup4 .owl-carousel").owlCarousel({
+          center: true,
+          items: 1,
+          loop: true,
+          margin: 10,
+          autoplay: true,
+          autoplayTime: 2500,
+          responsive: {
+            600: {
+              items: 1,
+            },
+          },
+        });
+        // project 5
+        $("#popup5 .owl-carousel").owlCarousel({
           center: true,
           items: 1,
           loop: true,
