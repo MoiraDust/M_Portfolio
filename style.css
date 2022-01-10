@@ -261,7 +261,7 @@ section img#sakura {
   line-height: 20px;
 }
 .projects .slider .card .content p {
-  text-align: justify;
+  /* text-align: justify; */
   margin: 10px 0;
 }
 .projects .btn {
@@ -299,11 +299,12 @@ section img#sakura {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 500px;
+  height: 550px;
   width: 800px;
   overflow: hidden;
-  /* padding: 10px; */
+  padding: 10px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
   background: white;
   z-index: 1;
   visibility: hidden;
@@ -336,16 +337,17 @@ section img#sakura {
 #popup4 .img,
 #popup5 .img {
   flex: 1;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 #popup1 .img img,
 #popup2 .img img,
 #popup3 .img img,
 #popup4 .img img,
 #popup5 .img img {
-  height: 100%;
+  height: 80%;
   width: 100%;
-  object-fit: cover;
+  /* object-fit: cover; */
+  background-clip: cover;
 }
 #popup1 button,
 #popup2 button,
@@ -353,8 +355,9 @@ section img#sakura {
 #popup4 button,
 #popup5 button {
   position: absolute;
-  left: 10px;
-  bottom: 10px;
+  left: 15px;
+  /* top: 10px; */
+  bottom: 15px;
 }
 
 .projects::after {
