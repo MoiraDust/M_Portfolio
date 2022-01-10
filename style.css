@@ -158,7 +158,7 @@ section img#sakura {
 /* intro */
 .introduction {
   position: relative;
-  padding: 100px;
+  padding: 60px;
   /* 一页 */
   height: 100vh;
   background-color: #333333;
@@ -171,8 +171,8 @@ section img#sakura {
 }
 .introduction img.arrow {
   display: absolute;
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
 }
 .introduction img.arrow:hover {
   content: "click to see my projects";
